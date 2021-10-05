@@ -60,3 +60,5 @@ export const gordinhoPix = [
 
 export const waves = '/images/svg-waves.svg';
 export const topWaves = '/images/svg-waves-top.svg';
+
+export const avatar = '/images/new-avatar.jpeg';
