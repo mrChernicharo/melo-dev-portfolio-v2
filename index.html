@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/icons/typescript.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Melo Dev Portfolio</title>
+
+		<style>
+			body {
+				margin: 0;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+					'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+					'Droid Sans', 'Helvetica Neue', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			#pre-loader {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+
+				color: #41424d;
+				background-color: #fff;
+			}
+
+			#pre-loader h1 {
+				animation: bounce 5s infinite ease-in-out;
+			}
+
+			#pre-loader p {
+				animation: bounce2 5s infinite ease-in-out;
+			}
+
+			@keyframes bounce {
+				from {
+					transform: translateX(-20px) rotate(2deg);
+				}
+				50% {
+					transform: translateX(20px) rotate(-2deg);
+				}
+				to {
+					transform: translateX(-20px) rotate(2deg);
+				}
+			}
+			@keyframes bounce2 {
+				from {
+					transform: translateX(20px) rotate(-2deg);
+				}
+				50% {
+					transform: translateX(-20px) rotate(2deg);
+				}
+				to {
+					transform: translateX(20px) rotate(-2deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root">
+			<div id="pre-loader">
+				<h1>Loading Portfolio...</h1>
+				<p>Please wait, content is on it's way</p>
+				<img src="/images/loader.gif" />
+			</div>
+		</div>
+		<script type="module" src="/src/app/main.tsx"></script>
+	</body>
 </html>

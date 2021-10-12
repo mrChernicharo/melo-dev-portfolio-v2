@@ -1,5 +1,5 @@
 {
-	"name": "melo-dev",
+	"name": "melo-dev-v2",
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite",
