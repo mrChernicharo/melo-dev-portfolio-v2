@@ -5,9 +5,9 @@ import { AppColors } from '../../utils/appColors';
 // import waves from '../../assets/svg/waves.svg';
 
 interface HomeProps {
-  theme: IAppTheme;
-  responsive: boolean;
-  breakpoint: IBreakpoint;
+	theme: IAppTheme;
+	responsive: boolean;
+	breakpoint: IBreakpoint;
 }
 
 const flashing = (color: string) => keyframes`
@@ -23,78 +23,128 @@ to {
 `;
 
 export const HomeStyles = styled.div<HomeProps>`
-  section.top {
-    margin: ${({ responsive }) => (responsive ? '0 1rem' : '0 5vmax')};
+	section.top {
+		display: grid;
+		grid-template-columns: ${({ responsive }) =>
+			responsive ? '1fr' : '1fr 1fr'};
 
-    display: grid;
-    grid-template-columns: ${({ responsive }) => (responsive ? '1fr' : '1fr 1fr')};
+		margin: ${({ responsive }) => (responsive ? '0 1rem' : '0 5vmax')};
+		margin-bottom: -100px;
 
-    margin-bottom: -100px;
-  }
+		p.description {
+			max-width: 440px;
+		}
+	}
 
-  section.img-frame {
-    min-height: 200px;
-    /* border: 1px solid red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+	section.img-frame {
+		/* border: 1px solid red; */
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
 
-    .waves {
-      position: relative;
-      bottom: 0;
-      left: 0;
-    }
-  }
+		.waves {
+			position: relative;
+			bottom: 0;
+			left: 0;
+		}
+	}
 
-  section.projects {
-    h1 {
-      font-size: calc(3.5vmin + 16px);
-      margin-top: calc(5vmin + 4px);
-    }
-    /* margin-top: -100px; */
-  }
-  section.about {
-    /* margin-top: -100px; */
-  }
-  section.contact {
-  }
+	section.projects {
+		padding-bottom: 2rem;
+		h2 {
+			margin: 3rem 0;
+		}
+		p.description {
+			max-width: 540px;
 
-  .heading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+			p.top-p {
+				font-size: calc(1.6vmin + 8px);
+			}
+		}
+		div.under-title {
+			/* border: 1px solid red; */
+			display: grid;
+			grid-template-columns: ${({ breakpoint }) => {
+				switch (breakpoint) {
+					case 'mobile':
+					case 'tablet':
+						return '1fr';
+					case 'desktop':
+						return '500px 1fr';
+					case 'wide':
+						return '1fr 1fr';
+				}
+			}};
+			justify-items: center;
 
-    h1 {
-      font-size: calc(4vmin + 20px);
-      margin-top: calc(5vmin + 4px);
-      margin-bottom: 0;
-    }
+			div.pix-grid {
+				/* border: 1px solid blue; */
+				max-width: 520px;
+				min-width: 300px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 0.4rem;
 
-    h2 {
-      font-size: calc(3vmin + 6px);
+				justify-items: center;
+				align-items: center;
 
-      div.code {
-        display: inline-block;
-        color: ${({ theme }) => AppColors(theme).tertiary};
-        animation: ${({ theme }) => flashing(AppColors(theme).tertiary)} 3s infinite
-          ease-in-out;
-      }
-    }
-  }
-  div.description {
-    font-size: calc(1.4vmin + 6px);
-    z-index: 8;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    max-width: 440px;
-  }
+				img {
+					height: auto;
+					width: ${({ responsive }) =>
+						responsive ? '100%' : 'auto'};
+					max-width: 260px;
+					max-height: 160px;
+				}
+			}
+		}
+		.video-gallery {
+			margin-block: 2rem;
+		}
+	}
 
-  /* img.bottom-waves {
-    position: relative;
-    left: 0;
-    bottom: -4px;
-    z-index: 1;
-  } */
+	section.about {
+		/* margin-top: -100px; */
+		p.description {
+			max-width: 440px;
+			margin: 0 auto;
+		}
+	}
+
+	.heading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			margin-bottom: 0;
+		}
+
+		h2 {
+			font-size: calc(3vmin + 6px);
+
+			div.code {
+				display: inline-block;
+				color: ${({ theme }) => AppColors(theme).tertiary};
+				animation: ${({ theme }) => flashing(AppColors(theme).tertiary)}
+					3s infinite ease-in-out;
+			}
+		}
+	}
+
+	p.description {
+		font-size: calc(1.4vmin + 6px);
+		z-index: 8;
+		padding: 0.5rem 1rem;
+		border-radius: 6px;
+	}
+
+	h1 {
+		font-size: calc(4vmin + 16px);
+		margin-top: calc(5vmin + 4px);
+	}
 `;
-/* text-shadow: ${({ theme }) => '0px 0px 10px ' + AppColors(theme).tertiary}; */
+
+/* grid-template-columns: ${({ responsive }) =>
+				responsive ? '1fr' : '1fr 1fr'}; */

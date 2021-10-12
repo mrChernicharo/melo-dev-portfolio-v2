@@ -1,55 +1,102 @@
 import React from 'react';
-import { Styles } from './Styles';
-
+import { FaCheck } from 'react-icons/fa';
+import { FiFileText, FiMapPin } from 'react-icons/fi';
 import Lottie, { Options as LottieOptions } from 'react-lottie';
 
-import AboutLinks from '../../components/AboutLinks/AboutLinks';
-
-import computersAnimation from '../../assets/lottie/tech-reviews.json';
-
-// import { waves, avatar } from '../../utils/helpers';
 // @ts-ignore
 import waves from '/images/svg-waves.svg';
 // @ts-ignore
 import avatar from '/images/new-avatar.jpeg';
+import computersAnimation from '../../assets/lottie/tech-reviews.json';
 
-import { techCategories, skillsList } from '../../utils/skills';
+import { skillsList } from '../../utils/skills';
 import { useWindowSize } from '../../hooks/useWindowSize';
+
 import Button from '../../components/Button/Button';
-import { FiFileText } from 'react-icons/fi';
 import CurrentPageIndicator from '../../components/CurrentPageIndicator/CurrentPageIndicator';
+import AboutLinks from '../../components/AboutLinks/AboutLinks';
+
+import { Styles } from './Styles';
 
 export default function About(): JSX.Element {
-	const { breakpoint } = useWindowSize();
+	const { breakpoint, width } = useWindowSize();
+
 	const animOptions: LottieOptions = {
 		animationData: computersAnimation,
 	};
+
+	const btnFont = () => {
+		// const fontsize = breakpoint === 'mobile' ? 14 : 18) : 24;
+		let fontsize = 14;
+		switch (breakpoint) {
+			case 'mobile':
+				fontsize = 18;
+				break;
+			case 'tablet':
+				fontsize = 24;
+				break;
+			case 'desktop':
+			case 'wide':
+				fontsize = 28;
+				break;
+		}
+		return fontsize;
+	};
+
 	return (
-		<Styles breakpoint={breakpoint}>
+		<Styles breakpoint={breakpoint} width={width}>
 			<CurrentPageIndicator text="About" />
+
 			<h1>Felipe who?</h1>
-			<main>
-				<div className="avatar-container">
-					<img src={avatar} alt="avatar" className="avatar" />
-					<div className="links-list">
-						<p>{'Web && Systems && Solutions Developer'}</p>
-						<p>Coding since 2018</p>
-					</div>
+
+			<section className="avatar-container">
+				<img src={avatar} alt="avatar" className="avatar" />
+				<div className="links-list">
+					<p>
+						Web <span className="highlight">&amp;&amp;</span>{' '}
+						Systems <span className="highlight">&amp;&amp;</span>{' '}
+						Solutions Developer
+					</p>
+					<p>Coding since 2018</p>
 				</div>
 
-				<Lottie options={animOptions} />
+				<br />
+				<a
+					href="https://mrchernicharo.github.io/curriculum/"
+					target="_blank"
+				>
+					<Button
+						title="Get CV"
+						font={btnFont()}
+						rightIcon={<FiFileText />}
+					/>
+				</a>
+				<br />
+				<br />
+				<br />
+			</section>
+
+			<main>
+				<div className="links-container">
+					<h2>
+						Reach out to me <FaCheck color="forestgreen" />
+					</h2>
+					<span>
+						<strong>
+							<FiMapPin size={20} /> Current Location:&nbsp;
+						</strong>
+						Washington DC
+					</span>
+					<AboutLinks />
+				</div>
+				<div className="lottie-container">
+					<Lottie options={animOptions} />
+				</div>
 			</main>
 
-			<AboutLinks />
+			<h2>Some stuff that I like to work with</h2>
+			<br />
 
-			<a
-				href="https://mrchernicharo.github.io/curriculum/"
-				target="_blank"
-			>
-				<Button title="Get CV" font={18} rightIcon={<FiFileText />} />
-			</a>
-
-			<h2>Stuff that I like to work with</h2>
 			<div className="skillList">
 				{skillsList.map(skill => (
 					<div className="skill-div" key={skill.name}>

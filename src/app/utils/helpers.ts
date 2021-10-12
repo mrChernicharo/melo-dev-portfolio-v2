@@ -58,6 +58,25 @@ export const gordinhoPix = [
 	'/images/gordimPix/05.png',
 ];
 
+export const lacosPix = [
+	'/images/lacosPix/01.png',
+	'/images/lacosPix/02.png',
+	'/images/lacosPix/03.png',
+	'/images/lacosPix/04.png',
+	'/images/lacosPix/05.png',
+	'/images/lacosPix/06.png',
+	'/images/lacosPix/07.png',
+	'/images/lacosPix/08.png',
+];
+
+export const oldPortPix = [
+	'/images/oldPortPix/port-01.png',
+	'/images/oldPortPix/port-02.png',
+	'/images/oldPortPix/port-03.png',
+	'/images/oldPortPix/port-04.png',
+	'/images/oldPortPix/port-05.png',
+];
+
 // export const waves = '../../assets/svg/svg-waves.svg';
 // export const topWaves = '../../assets/svg/svg-waves-top.svg';
 // export const avatar = '/images/new-avatar.jpeg';
