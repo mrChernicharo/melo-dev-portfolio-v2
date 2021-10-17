@@ -38,10 +38,13 @@ export const HomeStyles = styled.div<HomeProps>`
 
 	section.img-frame {
 		/* border: 1px solid red; */
-		min-height: 200px;
 		display: flex;
 		flex-direction: column;
 		justify-content: end;
+
+		&.with-margin {
+			min-height: 200px;
+		}
 
 		.waves {
 			position: relative;
@@ -52,18 +55,23 @@ export const HomeStyles = styled.div<HomeProps>`
 
 	section.projects {
 		padding-bottom: 2rem;
+		color: #fff;
+		background-image: linear-gradient(90deg, #1f56e4, #55e1de),
+			linear-gradient(to bottom, transparent, #1f56e4),
+			linear-gradient(to top, transparent, #55e1de);
+
 		h2 {
 			margin: 3rem 0;
 		}
 		p.description {
 			max-width: 540px;
+			font-weight: bold;
 
 			p.top-p {
-				font-size: calc(1.6vmin + 8px);
+				font-size: 1.5rem;
 			}
 		}
 		div.under-title {
-			/* border: 1px solid red; */
 			display: grid;
 			grid-template-columns: ${({ breakpoint }) => {
 				switch (breakpoint) {
@@ -122,29 +130,24 @@ export const HomeStyles = styled.div<HomeProps>`
 		}
 
 		h2 {
-			font-size: calc(3vmin + 6px);
-
-			div.code {
-				display: inline-block;
-				color: ${({ theme }) => AppColors(theme).tertiary};
-				animation: ${({ theme }) => flashing(AppColors(theme).tertiary)}
-					3s infinite ease-in-out;
-			}
+			font-size: 2rem;
 		}
 	}
-
+	.code {
+		display: inline-block;
+		color: ${({ theme }) => AppColors(theme).tertiary};
+		animation: ${({ theme }) => flashing(AppColors(theme).tertiary)} 3s
+			infinite ease-in-out;
+	}
 	p.description {
-		font-size: calc(1.4vmin + 6px);
+		font-size: 1rem;
 		z-index: 8;
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 	}
 
 	h1 {
-		font-size: calc(4vmin + 16px);
+		font-size: 3rem;
 		margin-top: calc(5vmin + 4px);
 	}
 `;
-
-/* grid-template-columns: ${({ responsive }) =>
-				responsive ? '1fr' : '1fr 1fr'}; */

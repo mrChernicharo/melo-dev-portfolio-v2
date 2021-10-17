@@ -48,15 +48,6 @@ export default function AboutLinks(): JSX.Element {
 					</span>
 				</a>
 			</li>
-
-			{/* <li>
-				<span>
-					<strong>
-						<FiMapPin size={20} /> Current Location:&nbsp;
-					</strong>
-					Washington DC
-				</span>
-			</li> */}
 		</Styles>
 	);
 }

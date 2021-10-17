@@ -78,16 +78,14 @@ export default function Home(): JSX.Element {
 				/>
 			</section>
 
-			<section className="img-frame">
+			<section className="img-frame with-margin">
 				<img src={waves} alt="waves" className="waves" />
 			</section>
 
 			{/* PROJECTS */}
 			<section className="projects">
 				<div className="heading">
-					<h2>
-						Check out some of my <div className="code">work</div>
-					</h2>
+					<h2>Check out some of my work</h2>
 				</div>
 
 				<div className="under-title">
@@ -100,10 +98,12 @@ export default function Home(): JSX.Element {
 					<div>
 						<p className="description">
 							<p className="top-p">
-								<strong>Learning </strong>equals{' '}
-								<strong>Discovery</strong> that equals{' '}
-								<strong>Fun!</strong>
-							</p>{' '}
+								Learning
+								<span className="code">&nbsp;==&nbsp;</span>
+								Discovery
+								<span className="code">&nbsp;==&nbsp;</span>
+								Fun!
+							</p>
 							Practicing is the best way to master a skill, and
 							there's no way to get good at something if you don't
 							get your hands dirty. That's why I consider myself
@@ -174,7 +174,7 @@ export default function Home(): JSX.Element {
 				</Link>
 			</section>
 
-			<section className="img-frame">
+			<section className="img-frame with-margin">
 				<img src={waves} className="bottom-waves" />
 			</section>
 		</HomeStyles>
