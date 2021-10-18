@@ -12,7 +12,13 @@ import topWaves from '/images/svg-waves-top.svg';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { useThemeContext } from '../../hooks/ThemeContext';
 import { getProject } from '../../utils/projects';
-import { gordinhoPix, lacosPix, oldPortPix } from '../../utils/helpers';
+import {
+	d3Pix,
+	gordinhoPix,
+	lacosPix,
+	oldPortPix,
+	otherPix,
+} from '../../utils/helpers';
 
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import Button from '../../components/Button/Button';
@@ -52,6 +58,7 @@ export default function Home(): JSX.Element {
 			responsive={responsive}
 			theme={theme}
 			breakpoint={breakpoint}
+			width={width}
 		>
 			{/* TOP */}
 			<section className="top">
@@ -90,20 +97,28 @@ export default function Home(): JSX.Element {
 
 				<div className="under-title">
 					<div className="pix-grid">
-						<img src={lacosPix[4]} alt="" />
-						<img src={gordinhoPix[3]} alt="" />
 						<img src={oldPortPix[2]} alt="" />
+						<img src={lacosPix[4]} alt="" />
+						<img src={d3Pix[2]} alt="" />
 						<img src={lacosPix[0]} alt="" />
+						<img src={d3Pix[1]} alt="" />
+						<img src={gordinhoPix[3]} alt="" />
+						{width > 1300 && (
+							<>
+								<img src={otherPix[1]} alt="" />
+								<img src={otherPix[0]} alt="" />
+							</>
+						)}
 					</div>
-					<div>
+					<div className="grid-side-text">
+						<p className="top-p">
+							Learning
+							<span className="code">&nbsp;==&nbsp;</span>
+							Discovery
+							<span className="code">&nbsp;==&nbsp;</span>
+							Fun!
+						</p>
 						<p className="description">
-							<p className="top-p">
-								Learning
-								<span className="code">&nbsp;==&nbsp;</span>
-								Discovery
-								<span className="code">&nbsp;==&nbsp;</span>
-								Fun!
-							</p>
 							Practicing is the best way to master a skill, and
 							there's no way to get good at something if you don't
 							get your hands dirty. That's why I consider myself

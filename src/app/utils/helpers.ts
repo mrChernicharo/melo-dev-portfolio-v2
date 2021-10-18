@@ -77,6 +77,18 @@ export const oldPortPix = [
 	'/images/oldPortPix/port-05.png',
 ];
 
+export const d3Pix = [
+	'/images/d3Pix/00.png',
+	'/images/d3Pix/01.png',
+	'/images/d3Pix/02.png',
+];
+
+export const otherPix = [
+	'/images/otherPix/00.png',
+	'/images/otherPix/01.png',
+	'/images/otherPix/02.png',
+];
+
 // export const waves = '../../assets/svg/svg-waves.svg';
 // export const topWaves = '../../assets/svg/svg-waves-top.svg';
 // export const avatar = '/images/new-avatar.jpeg';

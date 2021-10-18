@@ -20,6 +20,7 @@ export default function ButtonRow({ links }: IButtonRowProps): JSX.Element {
 						title="Github Repo"
 						onPress={() => {}}
 						leftIcon={<FiGithub />}
+						font={16}
 					/>
 				</a>
 			)}
@@ -31,6 +32,7 @@ export default function ButtonRow({ links }: IButtonRowProps): JSX.Element {
 						onPress={() => {}}
 						rightIcon={<FiGlobe />}
 						color="tertiary"
+						font={16}
 					/>
 				</a>
 			)}

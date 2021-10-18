@@ -31,7 +31,12 @@ export default function ProjectCard({
 			<div className="techs">
 				{techs.map(tech => (
 					<li>
-						<img src={tech.logo} alt={tech.name} width={30} />
+						<img
+							src={tech.logo}
+							alt={tech.name}
+							width={30}
+							className="tech-logo"
+						/>
 					</li>
 				))}
 			</div>

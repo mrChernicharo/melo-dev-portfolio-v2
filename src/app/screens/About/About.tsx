@@ -26,7 +26,6 @@ export default function About(): JSX.Element {
 	};
 
 	const btnFont = () => {
-		// const fontsize = breakpoint === 'mobile' ? 14 : 18) : 24;
 		let fontsize = 14;
 		switch (breakpoint) {
 			case 'mobile':
@@ -94,13 +93,13 @@ export default function About(): JSX.Element {
 				</div>
 			</main>
 
-			<h2>Some stuff that I like to work with</h2>
+			<h2>Some stuff that I like to work with ...</h2>
 			<br />
 
 			<div className="skillList">
 				{skillsList.map(skill => (
 					<div className="skill-div" key={skill.name}>
-						<img src={skill.logo} />
+						<img src={skill.logo} className="tech-logo" />
 						<span>{skill.name}</span>
 					</div>
 				))}

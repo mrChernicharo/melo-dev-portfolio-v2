@@ -31,4 +31,12 @@ export const PageStyles = styled.main<{ theme: IAppTheme }>`
 			text-shadow: 0 0 10px #fff;
 		}
 	}
+
+	img.tech-logo {
+		transition: 0.2s;
+
+		:hover {
+			transform: scale(1.2);
+		}
+	}
 `;

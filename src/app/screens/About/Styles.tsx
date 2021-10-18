@@ -71,6 +71,10 @@ export const Styles = styled.div<AboutProps>`
 		}};
 
 		div.links-container {
+			a {
+				color: ${({ theme }) => AppColors(theme).primary};
+			}
+
 			svg {
 				vertical-align: bottom;
 			}
@@ -99,7 +103,7 @@ export const Styles = styled.div<AboutProps>`
 			/* border: 1px solid; */
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: end;
 			align-items: center;
 			font-size: 0.75rem;
 			padding-top: 1.5rem;
@@ -107,6 +111,10 @@ export const Styles = styled.div<AboutProps>`
 			img {
 				max-width: 40px;
 				max-height: 40px;
+			}
+
+			span {
+				font-weight: bold;
 			}
 		}
 	}
