@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { IBreakpoint } from '../../hooks/useWindowSize';
 
-export const Styles = styled.div`
+export const Styles = styled.div<{ breakpoint: IBreakpoint }>`
 	h1 {
-		font-size: 3rem;
-		padding-top: 3rem;
+		font-size: ${({ breakpoint }) =>
+			breakpoint === 'mobile' ? '2.4rem' : '2.8rem'};
+		padding-top: 2.5rem;
 	}
 
 	h2 {

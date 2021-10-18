@@ -16,6 +16,7 @@ import CurrentPageIndicator from '../../components/CurrentPageIndicator/CurrentP
 import Button from '../../components/Button/Button';
 import { FiGithub } from 'react-icons/fi';
 import { MdDoubleArrow } from 'react-icons/md';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 export interface VideoCard {
 	videoUrl: string;
@@ -29,12 +30,14 @@ export interface VideoCard {
 export default function Projects(): JSX.Element {
 	const animOptions: LottieOptions = { animationData: ideaAnimation };
 
-	console.log({ skillsList, techCategories });
+	const { breakpoint } = useWindowSize();
+
+	// console.log({ skillsList, techCategories });
 
 	return (
-		<Styles>
+		<Styles breakpoint={breakpoint}>
 			<CurrentPageIndicator text="projects" />
-			<h1>Some of the stuff I built</h1>
+			<h1>See things that I've built</h1>
 
 			<div className="illustration">
 				<Lottie options={animOptions} width={400} height={400} />
@@ -45,14 +48,13 @@ export default function Projects(): JSX.Element {
 			))}
 
 			<br />
-			<h2>Want to see more?</h2>
-			<br />
+			<p>Want to see more?</p>
 			<br />
 
 			<Button
 				title="Check my Github"
 				leftIcon={<FiGithub />}
-				font={30}
+				font={20}
 				rightIcon={<MdDoubleArrow />}
 			/>
 

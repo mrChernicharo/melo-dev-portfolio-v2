@@ -16,7 +16,7 @@ export default function Header(): JSX.Element {
 
 	const [checked, setChecked] = useState(() => {
 		const initialTheme = localStorage.getItem('theme');
-		return initialTheme === 'dark';
+		return initialTheme && initialTheme === 'dark' ? true : false;
 	});
 	const [scrollPos, setScrollPos] = useState(0);
 

@@ -5,7 +5,7 @@ import { AppColors } from '../../utils/appColors';
 export const Styles = styled.div`
 	height: 100%;
 	h1 {
-		padding-top: 3rem;
+		padding-top: 2.5rem;
 	}
 	img.waves {
 		position: relative;

@@ -155,7 +155,8 @@ export default function Home(): JSX.Element {
 				<p className="description">
 					<p>
 						Yeah, I am a coder alright, but more than that, I'm also
-						a father, a husband, a musician and a runner.
+						a father, a husband, a musician, and sometimes a runner
+						too.
 					</p>
 					<p>
 						You can find out more about me on the links below, or

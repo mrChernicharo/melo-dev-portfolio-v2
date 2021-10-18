@@ -154,6 +154,7 @@ export const HomeStyles = styled.div<HomeProps>`
 		}
 		.video-gallery {
 			margin-block: 2rem;
+			padding-inline: 2rem;
 		}
 	}
 
