@@ -51,12 +51,14 @@ export default function Projects(): JSX.Element {
 			<p>Want to see more?</p>
 			<br />
 
-			<Button
-				title="Check my Github"
-				leftIcon={<FiGithub />}
-				font={20}
-				rightIcon={<MdDoubleArrow />}
-			/>
+			<a href="https://github.com/mrChernicharo" target="_blank">
+				<Button
+					title="Check my Github"
+					leftIcon={<FiGithub />}
+					font={20}
+					rightIcon={<MdDoubleArrow />}
+				/>
+			</a>
 
 			<img src={waves} className="bottom-waves" />
 		</Styles>

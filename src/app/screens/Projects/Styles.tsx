@@ -15,4 +15,9 @@ export const Styles = styled.div<{ breakpoint: IBreakpoint }>`
 	.illustration {
 		margin-bottom: -72px;
 	}
+
+	img.bottom-waves {
+		width: 100%;
+		height: 100%;
+	}
 `;

@@ -8,7 +8,7 @@ export const ProjectCardStyles = styled.div<{
 	theme: IAppTheme;
 	width: number;
 }>`
-	width: calc(100% - 12vmin);
+	width: calc(100% - 15vmin);
 	max-width: 750px;
 
 	position: relative;
