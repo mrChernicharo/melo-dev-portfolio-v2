@@ -55,13 +55,13 @@ export const HomeStyles = styled.div<HomeProps>`
 			margin-bottom: ${({ browser }) => {
 				switch (browser) {
 					case 'Google Chrome':
-						return '-0.23rem';
+						return '-0.22rem';
 					case 'Apple Safari':
 						return '-0.23rem';
 					case 'Mozilla Firefox':
 						return '-0.285rem';
 					default:
-						return '-0.23rem';
+						return '-0.22rem';
 				}
 			}};
 			position: relative;
@@ -147,7 +147,8 @@ export const HomeStyles = styled.div<HomeProps>`
 			div.grid-side-text {
 				/* border: 1px solid; */
 				height: 100%;
-				padding: 0 1.5rem 0 1rem;
+				padding: ${({ responsive }) =>
+					responsive ? '3rem 1.5rem 0 1rem' : '0 1.5rem 0 1rem'};
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -157,7 +158,7 @@ export const HomeStyles = styled.div<HomeProps>`
 					font-weight: bold;
 				}
 				p.top-p {
-					margin-bottom: 0;
+					margin-bottom: 1rem;
 					font-size: ${({ breakpoint }) => {
 						switch (breakpoint) {
 							case 'mobile':

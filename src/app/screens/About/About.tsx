@@ -106,8 +106,8 @@ export default function About(): JSX.Element {
 			</main>
 
 			<h2>
-				...And check some of the techs that I've worked with in the past
-				few years
+				Check some of the techs that I've worked with in the past few
+				years
 			</h2>
 			<br />
 

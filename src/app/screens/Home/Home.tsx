@@ -132,17 +132,16 @@ export default function Home(): JSX.Element {
 							Learning
 							<span className="code">&nbsp;==&nbsp;</span>
 							Discovery
-							<span className="code">&nbsp;==&nbsp;</span>
+							<span className="code">&nbsp;&amp;&amp;&nbsp;</span>
 							Fun!
 						</p>
 						<p className="description">
 							Practicing is the best way to master a skill, and
 							there's no way to get good at something if you don't
 							get your hands dirty. That's why I consider myself
-							to be very lucky: I just love to practice! For me,
-							nothing is more exciting than to start a new project
-							and to tinker around with new technologies and
-							tools.
+							lucky: I just love to practice! For me, nothing is
+							more exciting than to start a new project and to
+							tinker around with new technologies and tools.
 						</p>
 					</div>
 				</div>
@@ -155,13 +154,13 @@ export default function Home(): JSX.Element {
 					<p>
 						As mentioned above, I just{' '}
 						<span className="code">LOVE</span> to build things with
-						code! That's why my github has over 130 reopsitories! In
-						everyone of them I explore new tools and ideas, always
-						aiming to push my boundaries farther away. I want to
-						make sure I'm be able to code my ideas out, no matter
-						what they are. So, whenever a new challenge shows up, I
-						just create a new project and tackle the problem through
-						a hands-on approach.
+						code! That's why my github has over 130 repositories! In
+						each of them I explore new tools and ideas, always with
+						the goal of pushing my limits even further. I want to be
+						able to code my ideas, no matter what they are. So
+						whenever a new challenge comes up, I simply create a new
+						project and tackle the problem through a practical
+						approach.
 					</p>
 				</div>
 

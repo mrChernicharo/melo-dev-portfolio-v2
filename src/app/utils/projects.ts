@@ -82,7 +82,7 @@ export const projects: IProject[] = [
 		id: 'd3',
 		title: '3D Charts',
 		description:
-			'D3 stands for Data Driven Documents and D3.js is probably the most robust data visualizations library out there. This project is a study case on how to implement different kinds of charts focusing on animating and adding interaction to the widgets.',
+			'D3 stands for Data Driven Documents and D3.js is probably the most robust data visualizations library out there, a true Industry Standard. This project is a study case on how to implement different kinds of charts focusing on animating and adding interaction to responsive widgets.',
 		links: {
 			github: 'https://github.com/mrChernicharo/d3-charts',
 			www: 'https://main.didxcis265emq.amplifyapp.com/stacked-area',
@@ -94,7 +94,7 @@ export const projects: IProject[] = [
 		id: 'lacos',
 		title: 'Laços App',
 		description:
-			'An Angular enterprise app constructed for a real Psychology Clinic in Brazil. The whole backend was built using firebase products, like authentication, firestore, firestorage, and the GCP infrastructure.',
+			'An Angular enterprise app constructed for a real Psychology Clinic in Brazil. The whole backend was built using a serverless architecture empowered by firebase services like authentication, firestore and firestorage.',
 		links: {
 			github: null,
 			www: null,
