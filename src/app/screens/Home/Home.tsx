@@ -13,6 +13,7 @@ import { useWindowSize } from '../../hooks/useWindowSize';
 import { useThemeContext } from '../../hooks/ThemeContext';
 import { getProject } from '../../utils/projects';
 import {
+	checkBrowser,
 	d3Pix,
 	gordinhoPix,
 	lacosPix,
@@ -29,6 +30,8 @@ import { MdDoubleArrow } from 'react-icons/md';
 
 export default function Home(): JSX.Element {
 	const [responsive, setResponsive] = useState(false);
+	const [browser, setBrowser] = useState('');
+
 	const melRef = useRef<HTMLVideoElement>(null);
 	const capoeiraRef = useRef<HTMLVideoElement>(null);
 
@@ -49,8 +52,13 @@ export default function Home(): JSX.Element {
 	}, [width]);
 
 	useEffect(() => {
+		console.log(browser);
+	}, [browser]);
+
+	useEffect(() => {
 		melRef.current?.play();
 		capoeiraRef.current?.play();
+		setBrowser(checkBrowser());
 	}, []);
 
 	return (
@@ -59,6 +67,7 @@ export default function Home(): JSX.Element {
 			theme={theme}
 			breakpoint={breakpoint}
 			width={width}
+			browser={browser}
 		>
 			{/* TOP */}
 			<section className="top">
@@ -82,6 +91,14 @@ export default function Home(): JSX.Element {
 					options={animOptions}
 					isStopped={false}
 					isPaused={false}
+					isClickToPauseDisabled
+					height={
+						responsive
+							? '65vmin'
+							: breakpoint === 'wide'
+							? '32vmax'
+							: '40vmax'
+					}
 				/>
 			</section>
 
@@ -134,14 +151,30 @@ export default function Home(): JSX.Element {
 					<VideoPlayer src={getProject('gordinho').videoUrl} />
 				</div>
 
-				<Link to={'/projects'} onClick={() => scrollTo({ top: 0 })}>
-					<Button
-						title="Check more projects"
-						align="center"
-						font={btnFont()}
-						rightIcon={<MdDoubleArrow />}
-					/>
-				</Link>
+				<div className="video-bottom-text">
+					<p>
+						As mentioned above, I just{' '}
+						<span className="code">LOVE</span> to build things with
+						code! That's why my github has over 130 reopsitories! In
+						everyone of them I explore new tools and ideas, always
+						aiming to push my boundaries farther away. I want to
+						make sure I'm be able to code my ideas out, no matter
+						what they are. So, whenever a new challenge shows up, I
+						just create a new project and tackle the problem through
+						a hands-on approach.
+					</p>
+				</div>
+
+				<div className="goto-projects-button-container">
+					<Link to={'/projects'} onClick={() => scrollTo({ top: 0 })}>
+						<Button
+							title="Check more projects"
+							align="center"
+							font={btnFont()}
+							rightIcon={<MdDoubleArrow />}
+						/>
+					</Link>
+				</div>
 			</section>
 
 			<section className="img-frame">
@@ -155,20 +188,13 @@ export default function Home(): JSX.Element {
 				<p className="description">
 					<p>
 						Yeah, I am a coder alright, but more than that, I'm also
-						a father, a husband, a musician, and sometimes a runner
-						too.
-					</p>
-					<p>
-						You can find out more about me on the links below, or
-						simply go to the contacts page and send me a message.
-					</p>
-					<p>
-						Don't hesitate, just write! I'll be pleased to respond
-						:)
+						a father, a husband, a musician, and sometimes a runner.
+						You can also find out more about things that I do and
+						the techs that I've been working with on the links
+						below.
 					</p>
 				</p>
-
-				<AboutLinks />
+				<br />
 
 				<Link to={'/about'} onClick={() => scrollTo({ top: 0 })}>
 					<Button
@@ -178,8 +204,18 @@ export default function Home(): JSX.Element {
 						rightIcon={<MdDoubleArrow />}
 					/>
 				</Link>
+
+				<AboutLinks />
+
+				<p className="description">
+					<p>
+						Or simply go to the contacts page and send me a message.
+						Please don't hesitate, just write me whatever you have
+						in mind! I'll be pleased to respond :)
+					</p>
+				</p>
 				<br />
-				<br />
+
 				<Link to={'/contact'} onClick={() => scrollTo({ top: 0 })}>
 					<Button
 						title="Go to contact page"

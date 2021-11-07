@@ -10,6 +10,7 @@ import Switch from 'react-switch/dist/react-switch.dev.js';
 import { useThemeContext } from '../../hooks/ThemeContext';
 import Nav from '../Nav/Nav';
 import { Styles } from './Styles';
+import { checkBrowser } from '../../utils/helpers';
 
 export default function Header(): JSX.Element {
 	const { theme, toggleTheme } = useThemeContext();
@@ -19,6 +20,7 @@ export default function Header(): JSX.Element {
 		return initialTheme && initialTheme === 'dark' ? true : false;
 	});
 	const [scrollPos, setScrollPos] = useState(0);
+	const [browser, setBrowser] = useState('');
 
 	const htmlElement = document.querySelector('html');
 
@@ -32,14 +34,20 @@ export default function Header(): JSX.Element {
 	}, [theme]);
 
 	useEffect(() => {
+		console.log(browser);
+	}, [browser]);
+
+	useEffect(() => {
 		window.addEventListener('scroll', e => {
 			setScrollPos(htmlElement?.scrollTop || 0);
 		});
+		setBrowser(checkBrowser());
 	}, []);
 
 	return (
 		<Styles
 			theme={theme}
+			browser={browser}
 			className={scrollPos > 120 ? 'whitdrawn' : 'expanded'}
 		>
 			<div>

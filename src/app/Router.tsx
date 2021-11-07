@@ -7,6 +7,7 @@ import About from './screens/About/About';
 import Contact from './screens/Contact/Contact';
 import Home from './screens/Home/Home';
 import Projects from './screens/Projects/Projects';
+import { checkBrowser } from './utils/helpers';
 
 export default function Router(): JSX.Element {
 	const { theme } = useThemeContext();

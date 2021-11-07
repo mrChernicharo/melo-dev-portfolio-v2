@@ -9,6 +9,7 @@ interface HomeProps {
 	responsive: boolean;
 	breakpoint: IBreakpoint;
 	width: number;
+	browser: string;
 }
 
 const flashing = (color: string) => keyframes`
@@ -34,7 +35,6 @@ export const HomeStyles = styled.div<HomeProps>`
 			responsive ? '1fr' : '1fr 1fr'};
 
 		margin: ${({ responsive }) => (responsive ? '0 1rem' : '0 5vmax')};
-		margin-bottom: -100px;
 
 		p.description {
 			max-width: 440px;
@@ -43,15 +43,27 @@ export const HomeStyles = styled.div<HomeProps>`
 
 	section.img-frame {
 		/* border: 1px solid red; */
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
-		justify-content: end;
+		justify-content: flex-end; */
 
 		&.with-margin {
-			min-height: 200px;
+			/* min-height: 200px; */
 		}
 
 		.waves {
+			margin-bottom: ${({ browser }) => {
+				switch (browser) {
+					case 'Google Chrome':
+						return '-0.23rem';
+					case 'Apple Safari':
+						return '-0.23rem';
+					case 'Mozilla Firefox':
+						return '-0.285rem';
+					default:
+						return '-0.23rem';
+				}
+			}};
 			position: relative;
 			bottom: 0;
 			left: 0;
@@ -68,10 +80,11 @@ export const HomeStyles = styled.div<HomeProps>`
 			linear-gradient(to top, transparent, ${gradColors(theme)[1]})`};
 
 		h2 {
-			margin: 3rem 0;
+			margin: 5rem 0;
 		}
 
 		div.under-title {
+			/* border: 1px solid; */
 			display: grid;
 
 			margin-left: ${({ responsive }) => (responsive ? 'unset' : '2rem')};
@@ -81,7 +94,6 @@ export const HomeStyles = styled.div<HomeProps>`
 					case 'tablet':
 						return '1fr';
 					case 'desktop':
-						return 'auto 1fr';
 					case 'wide':
 						return 'auto 1fr';
 				}
@@ -134,27 +146,46 @@ export const HomeStyles = styled.div<HomeProps>`
 
 			div.grid-side-text {
 				/* border: 1px solid; */
+				height: 100%;
 				padding: 0 1.5rem 0 1rem;
-				max-height: ${({ responsive }) =>
-					responsive ? '400px' : '270px'};
-				min-height: ${({ responsive }) =>
-					responsive ? 'auto' : '160px'};
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 
 				p.description {
 					max-width: 540px;
 					font-weight: bold;
 				}
 				p.top-p {
-					margin-top: ${({ responsive }) =>
-						responsive ? '2rem' : '0'};
-					font-size: 1.5rem;
+					margin-bottom: 0;
+					font-size: ${({ breakpoint }) => {
+						switch (breakpoint) {
+							case 'mobile':
+								return '1.15rem';
+							case 'tablet':
+							case 'desktop':
+							case 'wide':
+								return '1.5rem';
+						}
+					}};
 					font-weight: bold;
 				}
 			}
 		}
 		.video-gallery {
-			margin-block: 2rem;
+			margin-block: 5rem;
 			padding-inline: 2rem;
+		}
+
+		.video-bottom-text {
+			padding-inline: 2rem;
+			max-width: 500px;
+			margin: 0 auto 2rem;
+			font-weight: bold;
+		}
+
+		.goto-projects-button-container {
+			padding: 1rem 0 5rem;
 		}
 	}
 
@@ -180,7 +211,8 @@ export const HomeStyles = styled.div<HomeProps>`
 			font-size: 2rem;
 		}
 	}
-	.code {
+	div.code,
+	span.code {
 		display: inline-block;
 		color: ${({ theme }) => AppColors(theme).tertiary};
 		animation: ${({ theme }) => flashing(AppColors(theme).tertiary)} 3s

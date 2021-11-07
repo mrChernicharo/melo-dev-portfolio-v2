@@ -40,7 +40,12 @@ export default function Projects(): JSX.Element {
 			<h1>See things that I've built</h1>
 
 			<div className="illustration">
-				<Lottie options={animOptions} width={400} height={400} />
+				<Lottie
+					options={animOptions}
+					width={400}
+					height={400}
+					isClickToPauseDisabled
+				/>
 			</div>
 
 			{projects.map((project, i) => (

@@ -43,10 +43,18 @@ export const Styles = styled.div<AboutProps>`
 		}
 
 		div.links-list {
+			max-width: 700px;
+			padding: 0 2rem;
+			margin: 0 auto;
+
 			span.highlight {
 				font-weight: bold;
 				color: ${({ theme }) => AppColors(theme).secondary};
 			}
+		}
+
+		.cv-button-container {
+			padding: 5rem 0;
 		}
 	}
 

@@ -51,28 +51,40 @@ export default function About(): JSX.Element {
 			<section className="avatar-container">
 				<img src={avatar} alt="avatar" className="avatar" />
 				<div className="links-list">
-					<p>
-						Web <span className="highlight">&amp;&amp;</span>{' '}
-						Systems <span className="highlight">&amp;&amp;</span>{' '}
-						Solutions Developer
+					<p>Yeah, that's me!</p>
+					<p style={{ fontSize: '1.5rem' }}>
+						I am a Web <span className="highlight">&amp;&amp;</span>{' '}
+						Solutions <span className="highlight">&amp;&amp;</span>{' '}
+						Systems Developer
 					</p>
-					<p>Coding since 2018</p>
+					<p>
+						Coding since 2018, I consider myself to be a Fullstack
+						engineer with strong focus on frontend development. I
+						have 3 years of professional experience dealing with
+						various web and mobile technologies, most of them
+						related to the JavaScript ecosystem.
+					</p>
+					<br />
+
+					<p>
+						In addition, I'm also a Problem solver, quick learner
+						and an extremely dedicated professional. Deeply
+						committed to bringing value to its employers.
+					</p>
 				</div>
 
-				<br />
-				<a
-					href="https://mrchernicharo.github.io/curriculum/"
-					target="_blank"
-				>
-					<Button
-						title="Get CV"
-						font={btnFont()}
-						rightIcon={<FiFileText />}
-					/>
-				</a>
-				<br />
-				<br />
-				<br />
+				<div className="cv-button-container">
+					<a
+						href="https://mrchernicharo.github.io/curriculum/"
+						target="_blank"
+					>
+						<Button
+							title="Check my CV"
+							font={btnFont()}
+							rightIcon={<FiFileText />}
+						/>
+					</a>
+				</div>
 			</section>
 
 			<main>
@@ -89,11 +101,14 @@ export default function About(): JSX.Element {
 					<AboutLinks />
 				</div>
 				<div className="lottie-container">
-					<Lottie options={animOptions} />
+					<Lottie options={animOptions} isClickToPauseDisabled />
 				</div>
 			</main>
 
-			<h2>Some stuff that I like to work with ...</h2>
+			<h2>
+				...And check some of the techs that I've worked with in the past
+				few years
+			</h2>
 			<br />
 
 			<div className="skillList">

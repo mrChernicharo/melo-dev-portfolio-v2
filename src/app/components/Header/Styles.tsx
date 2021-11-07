@@ -23,52 +23,55 @@ const bounce = keyframes`
 }
 `;
 
-export const Styles = styled.header<{ theme: IAppTheme }>`
-  background: ${({ theme }) => AppColors(theme).secondBg};
-  width: 100%;
+export const Styles = styled.header<{ theme: IAppTheme; browser: string }>`
+	background: ${({ theme }) => AppColors(theme).secondBg};
+	width: 100%;
 
-  position: fixed;
-  top: 0;
+	position: fixed;
+	top: 0;
 
-  display: grid;
-  grid-template-columns: 54px 170px 1fr;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 54px 170px 1fr;
+	align-items: center;
+	justify-items: end;
 
-  color: #fff;
-  z-index: 10;
+	color: #fff;
+	z-index: 10;
 
-  transform-origin: top;
-  transition: all 0.5s ease-in-out;
+	transform-origin: top;
+	transition: all 0.5s ease-in-out;
 
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6), 0px 1px 6px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6), 0px 1px 6px rgba(0, 0, 0, 0.7);
 
-  &.whitdrawn {
-    animation: 0.8s ${bounce};
-    height: 2.5rem;
-  }
-  &.expanded {
-    height: 4rem;
-  }
+	&.whitdrawn {
+		animation: 0.8s ${bounce};
+		animation-fill-mode: ${({ browser }) =>
+			browser === 'Apple Safari' ? 'forwards' : 'unset'};
+		height: 2.5rem;
+	}
+	&.expanded {
+		height: 4rem;
+	}
 
-  .react-switch-bg > div {
-    border: none;
+	.react-switch-bg > div {
+		border: none;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  section {
-    display: flex;
+	section {
+		display: flex;
 
-    /* border: 1px solid #fff; */
+		/* border: 1px solid #fff; */
 
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
+		flex-direction: row;
+		align-items: center;
+		justify-content: end;
 
-    > div {
-      z-index: 12;
-    }
-  }
+		> div {
+			z-index: 12;
+		}
+	}
 `;

@@ -30,7 +30,12 @@ export default function Contact(): JSX.Element {
 
 			<p>{serverMessage}</p>
 
-			<Lottie options={animOptions} width={400} height={280} />
+			<Lottie
+				options={animOptions}
+				width={400}
+				height={280}
+				isClickToPauseDisabled
+			/>
 
 			<ContactForm />
 
