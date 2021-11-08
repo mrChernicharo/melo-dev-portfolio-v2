@@ -8,9 +8,6 @@ export const Styles = styled.div`
 		padding-top: 2.5rem;
 	}
 	img.waves {
-		position: relative;
-		left: 0;
-		/* bottom: -4px; */
-		z-index: 1;
+		display: flex;
 	}
 `;

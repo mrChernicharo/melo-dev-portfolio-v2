@@ -126,4 +126,8 @@ export const Styles = styled.div<AboutProps>`
 			}
 		}
 	}
+
+	.bottom-waves {
+		display: flex;
+	}
 `;

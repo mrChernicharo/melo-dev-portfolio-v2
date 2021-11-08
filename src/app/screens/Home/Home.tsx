@@ -177,7 +177,7 @@ export default function Home(): JSX.Element {
 			</section>
 
 			<section className="img-frame">
-				<img src={topWaves} alt="waves" className="waves" />
+				<img src={topWaves} alt="" className="waves" />
 			</section>
 
 			{/* ABOUT */}

@@ -42,31 +42,11 @@ export const HomeStyles = styled.div<HomeProps>`
 	}
 
 	section.img-frame {
-		/* border: 1px solid red; */
-		/* display: flex;
-		flex-direction: column;
-		justify-content: flex-end; */
-
 		&.with-margin {
-			/* min-height: 200px; */
 		}
 
 		.waves {
-			margin-bottom: ${({ browser }) => {
-				switch (browser) {
-					case 'Google Chrome':
-						return '-0.2rem';
-					case 'Apple Safari':
-						return '-0.23rem';
-					case 'Mozilla Firefox':
-						return '-0.285rem';
-					default:
-						return '-0.2rem';
-				}
-			}};
-			position: relative;
-			bottom: 0;
-			left: 0;
+			display: flex;
 		}
 	}
 
