@@ -55,13 +55,13 @@ export const HomeStyles = styled.div<HomeProps>`
 			margin-bottom: ${({ browser }) => {
 				switch (browser) {
 					case 'Google Chrome':
-						return '-0.22rem';
+						return '-0.2rem';
 					case 'Apple Safari':
 						return '-0.23rem';
 					case 'Mozilla Firefox':
 						return '-0.285rem';
 					default:
-						return '-0.22rem';
+						return '-0.2rem';
 				}
 			}};
 			position: relative;
