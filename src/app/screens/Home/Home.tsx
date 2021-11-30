@@ -152,15 +152,12 @@ export default function Home(): JSX.Element {
 
 				<div className="video-bottom-text">
 					<p>
-						As mentioned above, I just{' '}
+						As mentioned above, I simply{' '}
 						<span className="code">LOVE</span> to build things with
 						code! That's why my github has over 130 repositories! In
 						each of them I explore new tools and ideas, always with
 						the goal of pushing my limits even further. I want to be
-						able to code my ideas, no matter what they are. So
-						whenever a new challenge comes up, I simply create a new
-						project and tackle the problem through a practical
-						approach.
+						able to code my ideas, no matter what they are.
 					</p>
 				</div>
 

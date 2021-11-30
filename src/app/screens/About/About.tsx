@@ -71,6 +71,12 @@ export default function About(): JSX.Element {
 						and an extremely dedicated professional. Deeply
 						committed to bringing value to its employers.
 					</p>
+
+					{/* <p>
+						Whenever a new challenge comes up I just create a new
+						project, another mini world so I can work on the problem
+						in isolation, through a hands-on approach.
+					</p> */}
 				</div>
 
 				<div className="cv-button-container">
