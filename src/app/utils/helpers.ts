@@ -37,6 +37,7 @@ export const videoURLs = {
 	mel: `${baseURL}/mel-portfolio.mp4`,
 	melMobile: `${baseURL}/Mel-mobile.mp4`,
 	oldPortfolio: `${baseURL}/old-portfolio.mp4`,
+	pathFinder: `${baseURL}/path_finder.mp4`
 };
 
 export function getXPTime(startDate: Date): string {
@@ -114,6 +115,14 @@ export const otherPix = [
 	'/images/otherPix/01.png',
 	'/images/otherPix/02.png',
 ];
+
+export const pathPix = [
+	'/images/pathPix/01.png',
+	'/images/pathPix/02.png',
+	'/images/pathPix/03.png',
+	'/images/pathPix/04.png',
+	'/images/pathPix/05.png',
+]
 
 // export const waves = '../../assets/svg/svg-waves.svg';
 // export const topWaves = '../../assets/svg/svg-waves-top.svg';
